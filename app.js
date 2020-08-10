@@ -3,7 +3,7 @@ const app = express();
  
 //route untuk halaman home
 app.get('/',(req, res) => {
-  res.send('Welcome To Express');
+  res.send('This is the Welcome Pages');
 });
  
 //route untuk halaman about
