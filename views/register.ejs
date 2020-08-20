@@ -1,0 +1,56 @@
+<%- include('partials/header'); -%>
+
+    <body class="container">
+        <form action="" method="post" class="form-signin">
+            <div class="card mx-auto" style="width: 30rem; margin-bottom: 50px; margin-top: 80px;">
+                <div class="card-body">
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align:center;">Form Register</h1>
+
+                    <div class="form-group">
+                        <label for="namaLengkap" class="sr-only">Nama Lengkap</label>
+                        <input type="text" name="nama" id="namaLengkap" class="form-control" placeholder="Masukan Nama Lengkap" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamatEmail" class="sr-only">Email</label>
+                        <input type="email" name="email" id="alamatEmail" class="form-control" placeholder="Masukan Alamat Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="typePassword" class="sr-only">Password</label>
+                        <input type="password" name="password" id="typePassword" class="form-control" placeholder="Masukan Password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="noHp" class="sr-only">No. HP</label>
+                        <input type="number" name="no_hp" id="noHp" class="form-control" placeholder="Masukan Nomor HP" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jenisKelamin" class="sr-only">Jenis Kelamin</label>
+                        <input type="radio" name="jenis_kelamin" id="jenisKelamin" value="lakilaki" required> Laki - Laki
+                        <input type="radio" name="jenis_kelamin" id="jenisKelamin" value="perempuan" required> Perempuan
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamatPengguna" class="sr-only">Alamat</label>
+                        <textarea name="alamat" id="alamatPengguna" cols="60" rows="10" placeholder="Masukan Alamat" required></textarea>
+                    </div>
+
+                    <div class="checkbox mb-3">
+                        <input type="checkbox" name="rememberMe" value="remember-me" required> Saya telah membaca dan menyetujui Aturan Penggunaan dan Kebijakan Privasi<br>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Daftar</button>
+                    </div>
+
+                    <div class="checkbox mb-3" style="text-align: center;">
+                        Sudah Punya Akun? <a href="/login">Silahkan Login</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+
+<%- include('partials/footer'); -%>

@@ -1,5 +1,9 @@
 const express = require('express');
+const port = process.env.port||8000;
+
 const app = express();
+
+app.set('view engine', 'ejs');
  
 //route untuk halaman home
 app.get('/',(req, res) => {
@@ -10,7 +14,15 @@ app.get('/',(req, res) => {
 app.get('/about',(req, res) => {
   res.send('This is about page');
 });
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
  
-app.listen(8000, () => {
+app.listen(port, () => {
   console.log('Server is running at port 8000');
 });
