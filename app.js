@@ -7,12 +7,7 @@ app.set('view engine', 'ejs');
  
 //route untuk halaman home
 app.get('/',(req, res) => {
-  res.send('This is the Welcome Pages');
-});
- 
-//route untuk halaman about
-app.get('/about',(req, res) => {
-  res.send('This is about page');
+  res.render('landingPage');
 });
 
 app.get('/login', (req, res) => {
