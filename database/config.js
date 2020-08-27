@@ -7,9 +7,4 @@ const connection = mysql.createConnection({
     database: 'db_dagang'
 });
 
-connection.connect((err) =>{
-    if(!!err) console.log(err);
-    else console.log('Connected!');
-});
-connection.end((err) => {
-  });
+module.exports = connection;

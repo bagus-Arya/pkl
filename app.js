@@ -1,7 +1,7 @@
-const express = require('express');
-const connection = require('./database/config');
-const bodyParser = require('body-parser');
-const port = process.env.port||8000;
+const express = require('express'),
+      connection = require('./database/config'),
+      bodyParser = require('body-parser')
+      port = process.env.port||8000;
 
 const app = express();
 
@@ -23,12 +23,9 @@ app.get('/register', (req, res) => {
 });
 
 app.post('/save',(req, res) => {
-  const pembeli = { name: req.body.nama};
-  connection.query('INSERT INTO tb_pembeli SET ?', pembeli, (err, res) => {
-  if(err) throw err;
-  console.log('Last insert ID:', res.insertId);
-  res.redirect('/');
-  });
+  const pembeli = {nm_pembeli: req.body.nama};
+  connection.query('INSERT INTO pembeli SET ?', pembeli);
+  res.render('landingPage');
 });
   
 app.listen(port, () => {
