@@ -7,4 +7,5 @@ const connection = mysql.createConnection({
     database: 'db_dagang'
 });
 
+// connection.connect(); 
 module.exports = connection;

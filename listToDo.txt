@@ -1,0 +1,8 @@
+1. Sesion login
+2. Ganti tabel pembeli menjadi tabel user
+3. Jika user mempunyai dagangan, masuk ke tabel pedagang(brand)
+4. Halaman upload produk, pesanan, list produk ke user
+5. Halaman pedagang(brand) mengontrol dagangannya => pesanan, dan lain lain
+
+/////////////////////////////////////////////////////////////////////////////
+1. install express session dan express mysql session
