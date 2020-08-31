@@ -1,0 +1,33 @@
+<%- include('partials/header'); -%>
+<%- include('partials/navbar'); -%>
+    <body> 
+        <div class="container">
+                <form action="" method="post" class="form-signin">
+                        <div class="card mx-auto" style="width: 30rem; margin-bottom: 50px; margin-top: 80px;">
+                            <div class="card-body">
+                                <h1 class="h3 mb-3 font-weight-normal" style="text-align:center;">Upload Produk Anda</h1>
+            
+                                <div class="form-group">
+                                    <label for="namaUsaha" class="sr-only">Nama Usaha</label>
+                                    <input type="text" name="namaUsaha" id="namaUsaha" class="form-control" placeholder="Masukan nama Usaha Anda" required autofocus>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sloganUsaha" class="sr-only">Slogan Usaha</label>
+                                    <input type="text" name="slogan" id="sloganUsaha" class="form-control" placeholder="Masukan slogan Usaha Anda" required autofocus>
+                                </div>
+            
+                                <div class="form-group">
+                                    <label for="alamatUsaha" class="sr-only">Alamat</label>
+                                    <input type="text" name="alamatUsaha" id="alamatUsaha" class="form-control" placeholder="Masukan Alamat Usaha" required autofocus>
+                                </div>
+
+                                <div class="form-group">
+                                    <button class="btn btn-lg btn-primary btn-block" type="submit">Daftar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+        </div>
+    </body>
+<%- include('partials/footer'); -%>

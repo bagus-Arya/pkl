@@ -24,9 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // routes
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
+// var insertRouter = require('./routes/insert');
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+// app.use('/insert', insertRouter);
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
