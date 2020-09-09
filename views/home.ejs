@@ -1,25 +1,325 @@
-<%- include('partials/header'); -%>
-<%- include('partials/navbar'); -%>
-    <!-- <body class="text-center">
-            <% if (messages.error) { %>
-                <p style="color:red"><%- messages.error %></p>
-                <% } %>
-                  
-                <% if (messages.success) { %>
-                    <p style="color:green"><%- messages.success %></p>
-                <% } %>
-            <div class="container">
-                    <div class="card">
-                      <div class="card-header">
-                       Dashboard <b><%= nama %></b>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title">Welcome</h5>
-                        <p class="card-text">You have successfully login</p>
-                        <a href="/auth/user/logout" class="btn btn-primary">Logout</a>
-                      </div>
+<%- include('partials/headerLogout'); -%>
+<body>
+    <div class="container">
+        <div style="text-align: left">
+            <h1>Selamat Datang<b> John Doe</b></h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy 
+            </p>      
+            </div>
+<!-- Headline -->
+    <ul id="slide1" class="cS-hidden">
+        <!-- item 1 -->
+       <li class="item-a">
+       <div class="box-custom">
+           <div class="slide-img">
+               <img src="/img/capcay.jpg" alt="1">
+               <div class="overlay">
+                   <a href="/productView" class="buy-btn">Pesan</a>
+               </div>
+           </div>
+           <div class="detail-box">
+               <div class="type">
+                   <a >Capcay</a>
+                   <span>This is capcay</span>
+               </div>
+               <div class="type">                  
+                <span>Mulai dari</span>
+                <a  class="price">IDR.300</a>
+            </div>
+           </div>
+       </div>
+       </li>
+         <!-- item 2 -->
+         <li class="item-b">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/fuyunghi.jpg" alt="2">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Fuyung Hi</a>
+                           <span>This is fuyung hi</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
                     </div>
-                   
+                   </div>
+               </div>
+               </li>
+         <!-- item 3 -->
+         <li class="item-c">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/miekuah.jpg" alt="3">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Mie Kuah</a>
+                           <span>This is mie kuah</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
                     </div>
-    </body> -->
+                   </div>
+               </div>
+               </li>
+             <!-- item 4 -->
+       <li class="item-d">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/nasgor.jpg" alt="4">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Nasi Goreng</a>
+                           <span>This is nasi goreng</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
+                    </div>
+                   </div>
+               </div>
+               </li>
+                 <!-- item 5 -->
+       <li class="item-e">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/nasgor.jpg" alt="5">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Nasi Goreng</a>
+                           <span>This is nasi goreng</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
+                    </div>
+                   </div>
+               </div>
+               </li>
+             <!-- item 6 -->
+       <li class="item-f">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/nasgor.jpg" alt="6">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Nasi Goreng</a>
+                           <span>This is nasi goreng</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
+                    </div>
+                   </div>
+               </div>
+               </li>
+    </ul>
+    <!-- Headline end -->
+    </div>
+
+    <div class="container mt-4">
+            <div style="text-align: left">
+                <div class="row">
+                    <h3>Tempat makan yang mungkin kamu cari</h3>
+                </div>
+            </div>
+        </div>
+
+    <!-- Place 2 -->
+    <div class="container mt-4">
+                <div class="container mt-4">
+                    <div class="row">
+                        <div class="col-sm-6" style="text-align: right;font-size: large;"><a href="#"><b>Denpasar Barat</b></a></div>
+                        <div class="col-sm-4" style="text-align: center;font-size: large;"><a href="#"><b>Denpasar Barat</b></a></div>
+                    </div>
+                      <div class="row">
+                        <div class="col-sm-5" style="text-align: right;font-size: large;"><a href="#"><b>Denpasar Barat</b></a></div>
+                        <div class="col-sm-3" style="text-align: center; font-size: x-large;"><a href="#"><b>Denpasar Barat</b></a></div>
+                        <div class="col-sm-3" style="text-align: left;font-size: large;"><a href="#"><b>Denpasar Barat</b></a></div>
+                      </div>
+                 </div>
+        </div>
+        <!-- Place End -->
+    
+    <div class="container mt-4">
+            <div style="text-align: left">
+                <div class="row">
+                    <h3>Minuman yang mungkin anda suka</h3>
+                </div>
+            </div>
+        </div>
+
+<div class="container">
+<!-- Headline -->
+<ul id="slide2" class="cS-hidden">
+        <!-- item 1 -->
+       <li class="item-a">
+       <div class="box-custom">
+           <div class="slide-img">
+               <img src="/img/esteh.jpg" alt="1">
+               <div class="overlay">
+                   <a href="#" class="buy-btn">Pesan</a>
+               </div>
+           </div>
+           <div class="detail-box">
+               <div class="type">
+                   <a >Es Teh Manis</a>
+                   <span>This is Es Teh Manis</span>
+               </div>
+               <div class="type">                  
+                <span>Mulai dari</span>
+                <a  class="price">IDR.300</a>
+            </div>
+           </div>
+       </div>
+       </li>
+         <!-- item 2 -->
+         <li class="item-b">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/esteh.jpg" alt="2">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Es Teh Manis</a>
+                           <span>This is Es Teh Manis</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
+                    </div>
+                   </div>
+               </div>
+               </li>
+         <!-- item 3 -->
+         <li class="item-c">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/esteh.jpg" alt="3">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Es Teh Manis</a>
+                           <span>This is Es Teh Manis</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
+                    </div>
+                   </div>
+               </div>
+               </li>
+             <!-- item 4 -->
+       <li class="item-d">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/esteh.jpg" alt="4">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Es Teh Manis</a>
+                           <span>This is Es Teh Manis</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
+                    </div>
+                   </div>
+               </div>
+               </li>
+                 <!-- item 5 -->
+       <li class="item-e">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/esteh.jpg" alt="5">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a >Es Teh Manis</a>
+                           <span>This is Es Teh Manis</span>
+                       </div>
+                       <div class="type">                  
+                        <span>Mulai dari</span>
+                        <a  class="price">IDR.300</a>
+                    </div>
+                   </div>
+               </div>
+               </li>
+             <!-- item 6 -->
+       <li class="item-f">
+               <div class="box-custom">
+                   <div class="slide-img">
+                       <img src="/img/esteh.jpg" alt="6">
+                       <div class="overlay">
+                           <a href="#" class="buy-btn">Pesan</a>
+                       </div>
+                   </div>
+                   <div class="detail-box">
+                       <div class="type">
+                           <a href="#">Es Teh Manis</a>
+                           <span>This is Es Teh Manis</span>
+                       </div>
+                       <div class="type">                  
+                           <span>Mulai dari</span>
+                           <a  class="price">IDR.300</a>
+                       </div>
+                   </div>
+               </div>
+               </li>
+    </ul>
+    <!-- Headline end -->
+</div>
+<script type="text/javascript">
+  var $j = jQuery.noConflict(); 
+  $j(document).ready(function() {
+    $('#slide1').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#slide1').removeClass('cS-hidden');
+        } 
+    });
+    $('#slide2').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#slide2').removeClass('cS-hidden');
+        } 
+    });    
+  });
+</script>
+</body>
 <%- include('partials/footer'); -%>

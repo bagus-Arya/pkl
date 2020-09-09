@@ -1,20 +1,21 @@
 <%- include('partials/header'); -%>
-<%- include('partials/navbar'); -%>
     <body> 
         <div class="container">
-                <form action="/auth/user/register" method="post" class="form-signin">
+                <form action="/home" method="" class="form-signin">
                         <div class="card mx-auto" style="width: 30rem; margin-bottom: 50px; margin-top: 80px;">
                             <div class="card-body">
-                                <h1 class="h3 mb-3 font-weight-normal" style="text-align:center;">Form Register</h1>
-            
-                                <div class="form-group">
+                                <h1 class="h3 font-weight-normal" style="text-align:center;">Daftar Sekarang</h1>
+                                <div class="checkbox mb-1" style="text-align: center;">
+                                    Sudah Punya Akun? <a href="/login">Silahkan Login</a>
+                                </div>
+                                <div class="form-group mt-4">
                                     <label for="namaLengkap" class="sr-only">Nama Lengkap</label>
                                     <input type="text" name="nama" id="namaLengkap" class="form-control" placeholder="Masukan Nama Lengkap" required autofocus>
                                 </div>
-            
+
                                 <div class="form-group">
-                                    <label for="alamatEmail" class="sr-only">Email</label>
-                                    <input type="email" name="email" id="alamatEmail" class="form-control" placeholder="Masukan Alamat Email" required>
+                                    <label for="inputUsername" class="sr-only">Username</label>
+                                    <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Masukan Username (contoh: candra)" required autofocus>
                                 </div>
             
                                 <div class="form-group">
@@ -46,9 +47,6 @@
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">Daftar</button>
                                 </div>
             
-                                <div class="checkbox mb-3" style="text-align: center;">
-                                    Sudah Punya Akun? <a href="/login">Silahkan Login</a>
-                                </div>
                             </div>
                         </div>
                     </form>
