@@ -3,12 +3,18 @@ var router = express.Router();
 
 // User
   // ke halaman home
-router.get('/', function(req, res) {
+router.get('/', function(req, res, next) {
     res.render('landingPage');
   });
   // ke halaman home
 router.get('/home', function (req, res){
-    res.render('home');
+  if (req.session.loggedin) {
+    res.render('home', {username: req.session.username});
+	} else {
+		res.render('login');
+	}
+	res.end();
+    // res.render('home');
   });
   // ke halaman login
 router.get('/login', function (req, res){

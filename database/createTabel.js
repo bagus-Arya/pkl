@@ -7,7 +7,7 @@ connection.connect(function(err) {
     (
         id_pembeli VARCHAR(50) NOT NULL,
         nm_pembeli VARCHAR(50), 
-        email_pembeli VARCHAR(100),
+        username_pembeli VARCHAR(100),
         pass_pembeli VARCHAR(20),
         no_hp VARCHAR(15),
         jenis_kelamin VARCHAR(20),
