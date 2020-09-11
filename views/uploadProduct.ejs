@@ -1,27 +1,52 @@
 <%- include('partials/header'); -%>
     <body> 
         <div class="container">
-                <form action="/mitra/productView" method="" class="form-signin">
-                        <div class="card mx-auto" style="width: 30rem; margin-bottom: 50px; margin-top: 80px;">
+                <form action="/mitra/productView" method="" enctype="multipart/form-data" class="form-signin">
+                        <div class="card mx-auto" style="width: 20rem; margin-bottom: 50px; margin-top: 40px;">
                             <div class="card-body">
-                                <h1 class="h3 mb-3 font-weight-normal" style="text-align:center;">Upload Produk Anda</h1>
+                                <h1 class="h5 mb-3 font-weight-normal" style="text-align:center;">Upload Produk Anda</h1>
             
                                 <div class="form-group">
-                                    <label for="namaUsaha" class="sr-only">Nama Usaha</label>
-                                    <input type="text" name="namaUsaha" id="namaUsaha" class="form-control" placeholder="Masukan Nama Usaha Anda" required autofocus>
+                                    <label for="namaProduk" class="sr-only">Nama Produk</label>
+                                    <input type="text" name="namaProduk" id="namaProduk" class="form-control" placeholder="Nama Produk (contoh: Nasi Goreng)" required autofocus>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="sloganUsaha" class="sr-only">Slogan Usaha</label>
-                                    <input type="text" name="slogan" id="sloganUsaha" class="form-control" placeholder="Masukan Slogan Usaha Anda" required autofocus>
-                                </div>
-            
-                                <div class="form-group">
-                                    <label for="alamatUsaha" class="sr-only">Alamat</label>
-                                    <input type="text" name="alamatUsaha" id="alamatUsaha" class="form-control" placeholder="Masukan Alamat Usaha" required autofocus>
+                                    <label>Harga</label>
+                                    <input type="email" class="form-control" required>
                                 </div>
 
-                                <div class="form-group">
+                                <!-- Default unchecked -->
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="makanDitempat" name="makanditempat">
+                                    <label class="custom-control-label" for="makanDitempat">Hanya untuk makan ditempat</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="pesanan" name="pesanan">
+                                    <label class="custom-control-label" for="pesanan">Bisa di pesan untuk acara nikahan dan lain lain</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="delivery" name="delivery">
+                                    <label class="custom-control-label" for="delivery">Diantar ke lokasi</label>
+                                </div>
+                                
+                                <!-- upload images -->
+                                <div class="col-md-12 mt-3">
+                                        <input type="file" class="form-control" id="images" name="images[]" onchange="preview_images();" multiple/>
+                                    </div>             
+                                        <div class="row" id="image_preview"></div>
+                                <!-- upload images script -->
+                                   <script>
+                                    function preview_images() {
+                                     var total_file=document.getElementById("images").files.length;
+                                     for(var i=0;i<total_file;i++)
+                                     {
+                                      $('#image_preview').append("<div class='col-md-3'><img style='grid-template-columns: 1fr 1fr 1fr 1fr; width: 200px; height: 200px;box-shadow: 2px 2px 30px rgba(0,0,0,0.2); border-radius: 10px; margin: 10px;overflow: hidden;' src='"+URL.createObjectURL(event.target.files[i])+"'></div>");
+                                     }
+                                    }
+                                    </script>	
+
+                                <div class="form-group mt-3">
                                     <button class="btn btn-lg btn-primary btn-block" type="submit">Upload Produk</button>
                                 </div>
                             </div>

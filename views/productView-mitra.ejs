@@ -81,7 +81,7 @@
                 <div id="addEmployeeModal" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <form>
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="modal-header">						
                                     <h4 class="modal-title">Tambah Produk</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -91,37 +91,31 @@
                                         <label>Nama Produk</label>
                                         <input type="text" class="form-control" required>
                                     </div>
+
                                     <div class="form-group">
                                         <label>Harga</label>
                                         <input type="email" class="form-control" required>
                                     </div>
-                                    <div class="dropdown my-3">
-                                        <div class="input-group justify-content-center">
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-info btn-md dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #000000;">
-                                                    Pilih Metode Pemesanan               
-                                                </button>              
-                                                <div class="dropdown-menu" onchange="selectMenu1" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" href="#" data="brown" >Hanya Untuk Makan Ditempat</a>
-                                                    <a class="dropdown-item" href="#" data="blue" >Bisa Di Pesan</a>
-                                                    <a class="dropdown-item" href="#" data="green" >Di Antar ke Lokasi</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <script>
-                                        $(".dropdown-menu a ").click(function(){
-                                                    $(this).parents(".input-group-btn").find('.btn').text($(this).text());
-                                                });
-                                    </script>
-                                    <form action="" method="" enctype="multipart/form-data">
-                                        <div class="col-md-6">
+
+                                    <!-- Default unchecked -->
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="makanDitempat" name="makanditempat">
+                                    <label class="custom-control-label" for="makanDitempat">Hanya untuk makan ditempat</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="pesanan" name="pesanan">
+                                    <label class="custom-control-label" for="pesanan">Bisa di pesan untuk acara nikahan dan lain lain</label>
+                                </div>
+
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="delivery" name="delivery">
+                                    <label class="custom-control-label" for="delivery">Diantar ke lokasi</label>
+                                </div>
+                                    
+                                    <div class="col-md-6 mt-3">
                                             <input type="file" class="form-control" id="images" name="images[]" onchange="preview_images();" multiple/>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="submit" class="btn btn-primary mt-2" name='submit_image' value="Tambahkan Gambar"/>
-                                        </div>
-                                       </form>                     
+                                        </div>                
                                             <div class="row" id="image_preview"></div>
                                        <script>
                                         function preview_images() {
