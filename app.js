@@ -11,16 +11,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// session
-app.use(session({
+var sess = {
+  name: 'sid',
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: true
-}))
-
-var sess = {
-  secret: 'keyboard cat',
-  cookie: {maxAge: 60000}
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 60000, 
+    sameSite: true,}
 }
 
 if (app.get('env') === 'production') {
@@ -29,13 +27,13 @@ if (app.get('env') === 'production') {
 }
 // production error handler
 // no stacktraces leaked to user
-// app.use(function(err, req, res, next) {
-//   res.status(err.status || 500);
-//   res.render('error', {
-//   message: err.message,
-//   error: {}
-//   });
-//   });
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('error', {
+  message: err.message,
+  error: {}
+  });
+  });
   
 app.use(session(sess))
 // routes

@@ -1,15 +1,16 @@
 var express = require('express');
 var connection = require('../database/config');
+var modules = require('./modules');
 var router = express.Router();
 
 // register user 
-router.post('/user/register', function (req, res) {
+router.post('/user/register', modules.redirectHome, function (req, res) {
     const pembeli = {nm_pembeli: req.body.nama, username_pembeli: req.body.username, pass_pembeli: req.body.password};
     connection.query('INSERT INTO pembeli SET ?', pembeli);
     res.redirect('/home');
   });
-// login
-router.post('/user/login', function(req, res) {
+// login user 
+router.post('/user/login', modules.redirectHome, function(req, res) {
 	var username = req.body.username;
 	var password = req.body.password;
 	if (username && password) {
@@ -19,7 +20,8 @@ router.post('/user/login', function(req, res) {
 				req.session.username = username;
 				return res.redirect('/home');
 			} else {
-				res.send('Incorrect Username and/or Password!');
+				// res.send('Incorrect Username and/or Password!');
+				res.render('login');
 			}			
 			res.end();
 		});
@@ -28,4 +30,15 @@ router.post('/user/login', function(req, res) {
 		res.end();
 	}
 });
+// logout 
+router.post('/user/logout', modules.redirectLogin, function (req, res) {
+	req.session.destroy( error => {
+		if (error) {
+			return res.redirect('/home')
+		}
+
+		res.render('landingPage')
+	})
+  });
+
 module.exports = router;

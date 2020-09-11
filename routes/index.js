@@ -1,4 +1,5 @@
 var express = require('express');
+var modules = require('./modules');
 var router = express.Router();
 
 // User
@@ -7,7 +8,7 @@ router.get('/', function(req, res, next) {
     res.render('landingPage');
   });
   // ke halaman home
-router.get('/home', function (req, res){
+router.get('/home', modules.redirectLogin, function (req, res){
   if (req.session.loggedin) {
     res.render('home', {username: req.session.username});
 	} else {
@@ -17,11 +18,11 @@ router.get('/home', function (req, res){
     // res.render('home');
   });
   // ke halaman login
-router.get('/login', function (req, res){
+router.get('/login', modules.redirectHome, function (req, res){
   res.render('login');
 });
   // ke halaman register
-router.get('/register', function(req, res) {
+router.get('/register', modules.redirectHome, function(req, res) {
     res.render('register');
   });
   // ke halaman view product
@@ -43,4 +44,5 @@ router.get('/uploadProduct', function(req, res) {
 router.get('/mitra/productView', function(req, res) {
     res.render('productView-mitra');
   });
+
 module.exports = router;
