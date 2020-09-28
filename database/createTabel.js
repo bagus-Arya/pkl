@@ -2,17 +2,17 @@ const connection = require("./config");
 
 connection.connect(function(err) {
     if (err) throw err;
-    // tabel pembeli
-    let sqlcust = `CREATE TABLE pembeli 
+    // tabel user
+    let sqlcust = `CREATE TABLE user 
     (
-        id_pembeli VARCHAR(50) NOT NULL,
-        nm_pembeli VARCHAR(50), 
-        username_pembeli VARCHAR(100),
-        pass_pembeli VARCHAR(20),
+        id_user INT(50) NOT NULL,
+        nm_user VARCHAR(50), 
+        username_user VARCHAR(100),
+        pass_user VARCHAR(20),
         no_hp VARCHAR(15),
         jenis_kelamin VARCHAR(20),
         id_lokasi VARCHAR(200),
-        PRIMARY KEY (id_pembeli)
+        PRIMARY KEY (id_user)
     )`;
     connection.query(sqlcust, function (err, result) {
         if (err) throw err;
@@ -21,9 +21,10 @@ connection.connect(function(err) {
     // tabel pedagang
     let sqlpel = `CREATE TABLE pedagang
     (
-        id_pedagang VARCHAR(50) NOT NULL, 
-        id_usaha VARCHAR(50),
-        id_produk VARCHAR(200),
+        id_pedagang INT(50) NOT NULL, 
+        id_user INT(50) NOT NULL, 
+        id_usaha INT(50),
+        id_produk INT(200),
         nm_pedagang VARCHAR(50),
         username VARCHAR(50), 
         pass_pedagang VARCHAR(20),
@@ -51,7 +52,7 @@ connection.connect(function(err) {
     let sqlpesanan = `CREATE TABLE pesanan
     (
         id_order VARCHAR(100) NOT NULL, 
-        id_pembeli VARCHAR(50),
+        id_user VARCHAR(50),
         id_pedagang VARCHAR(200),
         id_produk VARCHAR(200),
         no_order VARCHAR(50),
@@ -64,7 +65,7 @@ connection.connect(function(err) {
         console.log("Table created");
     });
     // tabel usaha
-    let sqlstore = `CREATE TABLE store
+    let sqlstore = `CREATE TABLE usaha
     (
         id_usaha int(50) NOT NULL,
         nm_usaha VARCHAR(255),
