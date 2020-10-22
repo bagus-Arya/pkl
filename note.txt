@@ -15,6 +15,7 @@ https://www.youtube.com/watch?v=auEkP8ZKWOE&ab_channel=CodeLanguage
 https://www.jsdelivr.com/package/npm/sweetalert2
 https://www.w3resource.com/node.js/nodejs-mysql.php
 https://www.tutsmake.com/node-express-js-creating-a-restful-api-mysql-example/
+https://bapakngoding.blogspot.com/2019/12/cara-membuat-crud-dengan-nodejs-express.html
 
 Icon
 https://glyph.smarticons.co/

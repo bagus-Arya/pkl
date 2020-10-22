@@ -1,0 +1,29 @@
+<%- include('partials/header'); -%>
+<body>
+    <%- include('partials/sidebar'); -%>
+    <!-- Page Content  -->
+    <div id="content">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <span>Tampilkan Menu Lain</span>
+                </button>
+               <!-- Page Content -->
+               <div class="row mx-2 my-3">
+                <div class="col-md-12 border-left">
+                    <div class="p-3 py-5">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 class="text-right"><%=titleProfil%></h4>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-md-6"><label class="labels">Nama</label><input type="text" class="form-control" placeholder="Nama Anda" value="<%=nama%>"></div>
+                            <div class="col-md-6"><label class="labels">Username</label><input type="text" class="form-control" value="" placeholder="Username Anda"></div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-12 my-1"><label class="labels">Nomor Hp</label><input type="text" class="form-control" placeholder="Masukkan Nomor Hp" value=""></div>
+                            <div class="col-md-12"><label class="labels">Lokasi</label><input type="text" class="form-control" placeholder="Masukkan Lokasi Anda" value=""></div>
+                        </div>
+                        <div class="mt-5 text-center"><button class="btn btn-primary" type="button">Simpan Perubahan</button></div>
+                    </div>
+                </div>
+               </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    </body>

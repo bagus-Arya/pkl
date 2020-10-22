@@ -35,11 +35,23 @@ router.get('/productView', function(request, response) {
     } else {
       response.redirect('/login');
     }
-  });
+});
+  // ke halaman user Profil
+router.get('/profil/:userId', function(request, response) {
+    if (request.session.loggedin) {       
+      response.render('profilEdit', {
+        userId: request.session.userId,
+        titleProfil : 'Profil Anda',
+        nama: request.session.nama
+      });
+    } else {
+      response.redirect('/login');
+    }
+});
   // Route Percobaan tampilan
 router.get('/perulangan', function(request, response) {
     response.render('perulangan');
-  });
+});
 // Mitra dagang
   // ke halaman join mitra dagang
 router.get('/joinMitra', modules.redirectLogin, function(request, response) {
