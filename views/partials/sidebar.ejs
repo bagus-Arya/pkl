@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <!-- sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Selamat datang <%=nama%></h3>
+        </div> 
+        <ul class="list-unstyled components">
+            <li class="list-unstyled components">
+                <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>   
+            </li>
+            <li class="list-unstyled components">
+              <a class="nav-link" href="/mitra/productView/<%=userId%>">Usaha Saya</a>
+            </li>
+            <li class="list-unstyled components">
+              <a class="nav-link" href="/mitra/orderView/<%=userId%>">Orderan Saya</a>
+            </li>
+            <form action="/auth/logout" method="POST">
+              <button class="btn btn-danger mx-2">Keluar</button>
+            </form>
+        </ul> 
+        <!-- Copyright -->
+        <div class="mt-5" style="color: #000000;">© 2020 Copyright
+            <a href="#">Pedagang Kaki Lima</a>
+        </div>  
+    </nav> 
+</div>

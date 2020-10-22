@@ -1,4 +1,5 @@
 <%- include('partials/header'); -%>
+<%- include('partials/nav'); -%>
     <body> 
         <div class="container">
                 <form action="/auth/user/register" method="POST" class="form-signin">
@@ -30,8 +31,8 @@
             
                                 <div class="form-group">
                                     <label for="jenisKelamin" class="sr-only">Jenis Kelamin</label>
-                                    <input type="radio" name="jenis_kelamin" id="jenisKelamin" value="lakilaki" required> Laki - Laki
-                                    <input type="radio" name="jenis_kelamin" id="jenisKelamin" value="perempuan" required> Perempuan
+                                    <input type="radio" name="jenis_kelamin" id="lakiLaki" value="pria" required> Laki - Laki
+                                    <input type="radio" name="jenis_kelamin" id="Perempuan" value="wanita" required> Perempuan
                                 </div>
             
                                 <div class="form-group">

@@ -1,8 +1,22 @@
-1. Sesion login
-2. Ganti tabel pembeli menjadi tabel user
+1. Sesion login = done
+2. Ganti tabel pembeli menjadi tabel user = done
 3. Jika user mempunyai dagangan, masuk ke tabel pedagang(brand)
 4. Halaman upload produk, pesanan, list produk ke user
 5. Halaman pedagang(brand) mengontrol dagangannya => pesanan, dan lain lain
 
 /////////////////////////////////////////////////////////////////////////////
-1. install express session dan express mysql session
+1. install express session dan express mysql session = done
+
+            AKHIR OKTOBER SELESAI
+
+ToDo;
+
+10 oktober 2020
+- fetch array from table user = done
+- flash msg = done
+
+
+- upload product by mitra usaha
+- fetch array data product
+- make payment calculation 
+- user can order product

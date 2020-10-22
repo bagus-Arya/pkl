@@ -5,10 +5,11 @@ connection.connect(function(err) {
     // tabel user
     let sqlcust = `CREATE TABLE user 
     (
-        id_user INT(50) NOT NULL,
+        id_user INT(50) NOT NULL AUTO_INCREMENT,
+        id_usaha INT(50),
         nm_user VARCHAR(50), 
         username_user VARCHAR(100),
-        pass_user VARCHAR(20),
+        password_user VARCHAR(20),
         no_hp VARCHAR(15),
         jenis_kelamin VARCHAR(20),
         id_lokasi VARCHAR(200),
@@ -18,30 +19,30 @@ connection.connect(function(err) {
         if (err) throw err;
         console.log("Table created");
     });
-    // tabel pedagang
-    let sqlpel = `CREATE TABLE pedagang
+    // tabel usaha
+    let sqlstore = `CREATE TABLE usaha
     (
-        id_pedagang INT(50) NOT NULL, 
-        id_user INT(50) NOT NULL, 
-        id_usaha INT(50),
-        id_produk INT(200),
-        nm_pedagang VARCHAR(50),
-        username VARCHAR(50), 
-        pass_pedagang VARCHAR(20),
-        no_hp VARCHAR(15),
-        id_status VARCHAR(255),
-        PRIMARY KEY (id_pedagang)
+        id_usaha int(50) NOT NULL AUTO_INCREMENT,
+        id_user int(50) NOT NULL,
+        nm_usaha VARCHAR(255),
+        deskripsi_usaha VARCHAR(255),
+        moto_usaha VARCHAR(200), 
+        id_lokasi VARCHAR(255),
+        telp VARCHAR(255), 
+        PRIMARY KEY (id_usaha)
     )`;
-    connection.query(sqlpel, function (err, result) {
+    connection.query(sqlstore, function (err, result) {
         if (err) throw err;
         console.log("Table created");
     });
     // tabel produk
     let sqlpro = `CREATE TABLE produk 
     (
-        id_produk VARCHAR(200) NOT NULL, 
-        nm_produk VARCHAR(50),
-        harga int(255), 
+        id_produk VARCHAR(200) NOT NULL AUTO_INCREMENT, 
+        nama_produk VARCHAR(50),
+        harga int(255),
+        jumlah_produk int(20),
+        status VARCHAR(100),
         PRIMARY KEY (id_produk)
     )`;
     connection.query(sqlpro, function (err, result) {
@@ -53,28 +54,14 @@ connection.connect(function(err) {
     (
         id_order VARCHAR(100) NOT NULL, 
         id_user VARCHAR(50),
-        id_pedagang VARCHAR(200),
-        id_produk VARCHAR(200),
+        id_usaha VARCHAR(200),
         no_order VARCHAR(50),
-        jmlh_order int(100),
+        id_produk VARCHAR(50),
+        jumlah_order int(100),
         total_harga int(100),
         PRIMARY KEY (id_order)
     )`;
     connection.query(sqlpesanan, function (err, result) {
-        if (err) throw err;
-        console.log("Table created");
-    });
-    // tabel usaha
-    let sqlstore = `CREATE TABLE usaha
-    (
-        id_usaha int(50) NOT NULL,
-        nm_usaha VARCHAR(255),
-        deskripsi_usaha VARCHAR(255),
-        moto_usaha VARCHAR(200), 
-        id_lokasi VARCHAR(255),
-        PRIMARY KEY (id_usaha)
-    )`;
-    connection.query(sqlstore, function (err, result) {
         if (err) throw err;
         console.log("Table created");
     });

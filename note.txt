@@ -1,34 +1,116 @@
 Put your note here;
 
-========================-card-========================
-                <div class="container mt-4">
-                <div class="row">                      
-                <div class="card col-lg-4 col-md-4 col-sm-4 col-4" style="width:250px; text-align: center;">
-                    <img class="card-img-top" src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" alt="Card image" width="150" height="150">
-                        <div class="card-body">
-                            <h4 class="card-title">John Doe</h4>
-                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                            <a href="#" class="btn btn-primary">Pesan</a>
-                            </div>
-                          </div>
+C:\Users\ASUS\Documents\GitHub\pkl>
+> node app.js atau nodemon app.js
 
-                        <div class="card col-lg-4 col-md-4 col-sm-4 col-4" style="width:250px; text-align: center;">
-                            <img class="card-img-top" src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" alt="Card image" width="150" height="150">
-                            <div class="card-body">
-                                <h4 class="card-title">John Doe</h4>
-                                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                <a href="#" class="btn btn-primary">Pesan</a>
-                                </div>
-                            </div>
+C:\Users\ASUS\Documents\GitHub\pkl\database>
+> node createTabel.js or node createdb.js
 
-                                <div class="card col-lg-4 col-md-4 col-sm-4 col-4" style="width:250px; text-align: center;">
-                                    <img class="card-img-top" src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" alt="Card image" width="150" height="150">
-                                        <div class="card-body">
-                                            <h4 class="card-title">John Doe</h4>
-                                            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                                            <a href="#" class="btn btn-primary">Pesan</a>
-                                            </div>
-                                          </div>
-                                        </div>
-                 </div>
-========================-card-========================
+
+10 oktober 2020
+simple crud
+https://www.mynotepaper.com/nodejs-simple-crud-with-expressjs-and-mysql
+http://learninfinity.info/crud-operation-using-nodejs-expressjs-mysql-part-1/
+https://www.youtube.com/watch?v=auEkP8ZKWOE&ab_channel=CodeLanguage
+https://www.jsdelivr.com/package/npm/sweetalert2
+https://www.w3resource.com/node.js/nodejs-mysql.php
+https://www.tutsmake.com/node-express-js-creating-a-restful-api-mysql-example/
+
+Icon
+https://glyph.smarticons.co/
+https://material.io/resources/icons/?icon=local_activity&style=baseline
+https://github.com/frexy/glyph-iconset/tree/master/svg
+
+
+Nodemon
+https://dev.to/thetradecoder/how-to-fix-error-nodemon-ps1-cannot-be-loaded-because-running-scripts-is-disabled-on-this-system-34fe
+https://stackoverflow.com/questions/63423584/how-to-fix-error-nodemon-ps1-cannot-be-loaded-because-running-scripts-is-disabl
+
+        <% if (messages.success) { %>
+                <div class="alert alert-success fade show" role="alert"><%= messages.success %>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                </div>
+              <% } %>
+                // req.flash('success', 'Thanks for the message!');
+                	    flash = require('express-flash');
+                        
+app.use(flash());
+
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+////query 3 tabel  
+SELECT user.nm_user,usaha.nm_usaha, lokasi.lokasi 
+FROM usaha  
+INNER JOIN lokasi  
+ON(usaha.id_lokasi = lokasi.id_lokasi)
+INNER JOIN user 
+ON(user.id_user = usaha.id_user)
+WHERE user.id_user = 1
+
+/////////output
+nm_user
+nm_usaha
+lokasi
+Bagus Arya
+Nasi Tempong Enak
+Jalan Cargo Sari
+Bagus Arya
+Nasi Tempong TOP
+Jalan Tukad Pakerisan
+
+
+///query untuk menampilkan data user
+SELECT usr.nm_user, lk.lokasi 
+FROM user usr 
+INNER JOIN lokasi lk 
+ON(usr.id_user = lk.id_lokasi)
+WHERE usr.id_user = 1
+
+////output 
+nm_user Bagus Arya
+lokasi Jalan Cargo Sari
+
+///query untuk menampilkan data user
+SELECT usr.nm_user, lk.lokasi 
+FROM user usr 
+INNER JOIN lokasi lk 
+ON(usr.id_user = lk.id_user)
+WHERE usr.id_user = 1
+
+////output 
+nm_user Bagus Arya
+lokasi Jalan Tukad Pakerisan
+
+/////////////////////////////////////////
+SELECT user.nm_user, usaha.nm_usaha
+FROM user
+INNER JOIN usaha on user.id_user = usaha.id_user
+WHERE user.id_user = 1
+
+//////output
+nm_user
+nm_usaha
+Bagus Arya
+Nasi Tempong Enak
+Bagus Arya
+Nasi Tempong TOP
+
+//////////////
+di auth.js login
+			for(var i=0, len = results.length; i < len; i++){
+				request.session.loggedin = true;
+				request.session.userId = results[i].id_user;			
+				request.session.username = results[i].nm_user;
+				console.log(results[i].id_user, results[i].nm_user)
+				console.log(request.fields.id_user)			
+				console.log(request.query.id_user)			
+				return response.redirect('/home/:userId');
+			}
