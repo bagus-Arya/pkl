@@ -1,4 +1,11 @@
 /* Self Upload Picture Slider */
+.gradient-text {
+    font-family: Arial;
+    font-size: 100px;
+    background: -webkit-linear-gradient(30deg,#705AEC, #ff134e, #B549CC, #9951DD, #0C63F9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
 .box-custom {
     width: 300px;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
